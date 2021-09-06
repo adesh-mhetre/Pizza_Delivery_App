@@ -4,9 +4,9 @@ from .views import *
 
 urlpatterns = [
     #path('urlname',view),
-    path('admin/',adminloginview, name = 'adminloginpage'),
+    path('adminlogin/',adminloginview, name = 'adminloginpage'),
     path('authenticateadmin/',authenticateadmin),
-    path('admin/homepage',adminhomepageview,name = 'adminhomepage'),
+    path('adminlogin/homepage',adminhomepageview,name = 'adminhomepage'),
     path('adminlogout/',logoutadmin),
     path('addpizza/',addpizza),
     path('deletepizza/<int:pizzapk>/',deletepizza),

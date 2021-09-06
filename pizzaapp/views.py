@@ -105,7 +105,7 @@ def placeorder(request):
             ordereditems = ordereditems + name +" "+ "price : " +" "+ str(int(quantity)*int(price)) +" " +"Quantity : "+" "+ quantity + "    "
     print(ordereditems)
     OrderModel(username=username,phoneno=phoneno,address=address,ordereditems=ordereditems).save()
-    messages.add_message(request,messages.ERROR,"Order successfully placed")
+    messages.add_message(request,messages.SUCCESS,"Order successfully placed")
     return redirect('customerpage')
 
 def userorders(request):

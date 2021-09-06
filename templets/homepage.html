@@ -11,19 +11,20 @@
     -->
 
     <a class="btn btn-danger" href="/loginuser/"> login </a>
+    <a class="btn btn-danger" href="{% url 'adminloginpage' %}"> adminlogin </a>
   </div>
 </nav>
 {% for message in messages %}
-<p style ="text-align:center">{{message}}</p>
+<p style ="text-align:center;color: rgb(0, 133, 0);">{{message}}</p>
 {% endfor %}
-<div class="container-fluid" style="position: relative;height: 900px;background-size: cover;background-image: url({%static "img/pizzahomepage.jpg" %});">
-   <div style="padding:40px;position:absolute;width : 400px;top:100px; right:20px; height:300px; background-color:orange;" class="container" >
+<div class="container-fluid" style="position: relative;height:670px;background-size: cover;background-image: url({% static "img/pizzahomepage.jpg" %});">
+   <div style="border-radius: 25px;padding:40px;position:absolute;width : 400px;top:100px; right:20px; height:300px; background-color:orange;" class="container" >
     <h1 style="text-align:center; color:white">Sign Up !</h1>
     <form method="post" action="/signupuser/">
         {% csrf_token %}
-        <input style="margin-bottom:10px" class="form-control" placeholder="username" type="text" name="username">
-        <input style="margin-bottom:10px" class="form-control" placeholder="password" type="password" name="password">
-        <input style="margin-bottom:10px" class="form-control" placeholder="phoneno" type="text" name="phoneno">
+        <input style="margin-bottom:10px" class="form-control" placeholder="username" type="text" name="username" required>
+        <input style="margin-bottom:10px" class="form-control" placeholder="password" type="password" name="password" required>
+        <input style="margin-bottom:10px" class="form-control" placeholder="phoneno" type="text" name="phoneno" required>
         <input style="display:block;margin:auto;margin-top:20px;" class="btn btn-success" type="submit" name="">
     </form>
     </div>
