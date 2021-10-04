@@ -1,0 +1,43 @@
+body{
+    background-color: antiquewhite;
+}
+.container-fluid{
+    background-color: orange;
+}
+.nav-items {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+/* .maincontainer {
+  background-color: antiquewhite;
+  height: 672px;
+} */
+.maincontainer p {
+  color: green;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  margin: auto;
+  width: 650px;
+  text-align: center;
+}
+
+.container table {
+  width: 100%;
+}
+
+.pizzainput {
+  width: 60px;
+}
+
+.btn btn-online-success {
+  margin-top: 100px;
+  float: right;
+}
+.address {
+  width: 400px;
+  margin-top: 110px;
+}

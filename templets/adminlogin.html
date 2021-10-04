@@ -1,24 +1,21 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/adminlogin.css'%}" type="text/css">
 {% endblock css %}
 {% block content %}
 <div class="adminlogin">
-    <div
-        style="box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);border-radius: 25px;
-        ;padding:10px;width:365px ; background-color : #fe6e00 ;display:block ; margin : auto ; margin-top:250px;padding: 25px;">
-        <h1 style="text-align:center;color: white;">Admin Login</h1>
+    <div class="subadminlogin">
+        <h1>Admin Login</h1>
         <form method="post" action="/authenticateadmin/">
             {% csrf_token %}
             <input style="margin-bottom:15px" type="text" class="form-control" placeholder="Username" name="username"
                 required>
             <input type="password" class="form-control" placeholder="Password" name="password" required>
-            <input style="display : block ; margin : auto ; margin-top:10px" type="submit" class="btn btn-success"
-                name="">
+            <input style="display : block ; margin : auto ; margin-top:10px" type="submit" class="btn btn-success" name="">
         </form>
         {% for message in messages %}
-        <p style="padding : 5px ; text-align : center ; color:black">{{message}}</p>
+        <p>{{message}}</p>
         {% endfor %}
     </div>
 

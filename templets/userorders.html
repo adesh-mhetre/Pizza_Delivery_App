@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static{'css/userorder.css'} %}" type="text/css">
+{% blockend css%}
 {% block content %}
-<h1 style="text-align:center">My Orders</h1>
-{% for order in orders %}
-<div style="margin:40px;"class="alert alert-warning" role="alert">
-        <p>{{order.username}}</p>
-        <p>{{order.phoneno}}</p>
-        <p>{{order.address}}</p>
-        <p>{{order.ordereditems}}</p>
-        <p>order status : {{order.status}}</p>
+<div class="container">
+        <h1>My Orders</h1>
+        {% for order in orders %}
+        <div sclass="alert alert-warning" role="alert">
+                <p>{{order.username}}</p>
+                <p>{{order.phoneno}}</p>
+                <p>{{order.address}}</p>
+                <p>{{order.ordereditems}}</p>
+                <p>order status : {{order.status}}</p>
+        </div>
 </div>
 {% endfor %}
 {% endblock %}

@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/userlogin.css' %}" type="text/css">
+{% endblock css %}
 {% block content %}
 
-<div style="background-color: #ffedc8;display:flex;width:100%;height:726px;">
+<!-- <div class="container"> -->
     <!-- <div  style="box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);width : 400px; ; background-color:orange; margin-top:250px; padding:20px;"> -->
-    <div
-        style="box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);border-radius: 25px;
-        padding:10px;width:365px ; background-color : #fe6e00 ;display:block ; margin : auto ; margin-top:250px;padding: 25px;">
+    <div class="userlog" style="">
         <h1 style=" text-align:  center ; color : white ; ">Login</h1>
         <form method="post" action="/customer/authenticate/">
             {% csrf_token %}
@@ -18,6 +20,6 @@
         <p style="padding:5px;text-align : center">{{message}}</p>
         {% endfor %}
     </div>
-</div>
+<!-- </div> -->
 
 {% endblock %}

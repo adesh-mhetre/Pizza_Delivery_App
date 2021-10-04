@@ -1,0 +1,42 @@
+.message {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.mainblock {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  height: 672px;
+  background-size: cover;
+  background-image: url("../img/pizzahomepage.jpg");
+}
+
+.container {
+  border-radius: 25px;
+  padding: 40px;
+  padding-bottom: 20px;
+  position: absolute;
+  width: 400px;
+  top: 100px;
+  right: 20px;
+  background-color: orange;
+}
+
+.container h1 {
+  text-align: center;
+  color: white;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.btn btn-success {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}

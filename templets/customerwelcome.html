@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/customerwelcome.css'%}" type="text/css">
+{% endblock css %}
 {% block content %}
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Welcome <strong>{{username}}</strong></a>
-    <a style="color:black;text-decoration:none;text-align: center;" class="nav-items" href="/userorders/">My Orders</a>
+    <a class="nav-items" href="/userorders/">My Orders</a>
     <!--<form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
@@ -13,28 +17,30 @@
     <a href="/userlogout/" class="btn btn-danger">logout</a>
   </div>
 </nav>
-{% for message in messages %}
-<p style="color:green;text-align:center;">{{message}}</p>
-{% endfor %}
-<form method="post" action="/placeorder/">
-{% csrf_token %}
-<div class="container" style="margin:auto ; width:650px;">
-  <table style='width:100%'>
-    <tr>
-        <th>Pizza</th>
-        <th>Price</th>
-        <th>Quantity</th>
-    </tr>
-    {% for pizza in pizzas %}
-    <tr>
-        <td>{{pizza.name}}</td>
-        <td>{{pizza.price}}</td>
-        <td><input type="number" min=0 value="0" name="{{pizza.id}}" style="width:60px" name="quantity"</td>
-    </tr>
-    {% endfor %}
-  </table>
-  <input type="text" placeholder="Address" style="width:400px;margin-top:110px ;" name="address">
-  <input type="submit" style="margin-top:100px;float:right;"class="btn btn-outline-success" value="Place Order">
+<div class="maincontainer">
+  {% for message in messages %}
+  <p>{{message}}</p>
+  {% endfor %}
+  <div class="container">
+    <form method="post" action="/placeorder/">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <th>Pizza</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        {% for pizza in pizzas %}
+        <tr>
+          <td>{{pizza.name}}</td>
+          <td>{{pizza.price}}</td>
+          <td><input class="pizzainput" type="number" min=0 value="0" name="{{pizza.id}}" name="quantity"> </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <input class="address" type="text" placeholder="Address" name="address" required>
+      <input type="submit" class="btn btn-outline-success" value="Place Order">
+    </form>
+  </div>
 </div>
-</form>
 {% endblock %}

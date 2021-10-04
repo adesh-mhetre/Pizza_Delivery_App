@@ -1,0 +1,47 @@
+body{
+  background-color: antiquewhite;
+}
+
+.container-fluid {
+  height: 50px;
+  background-color: #ffb300;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+}
+
+.mainblock {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.container {
+  width: 540px;
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-control {
+  width: 200px;
+  display: inline;
+  margin: auto;
+}
+
+.btn btn-success {
+  display: inline;
+  margin-bottom: 4px;
+}
+
+.pizzadisplay {
+  text-align: center;
+}
+
+.pizzadisplay table {
+  text-align: center;
+  width: 100%;
+}
